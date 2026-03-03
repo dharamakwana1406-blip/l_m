@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Practice Shop</title>
+    <style>
+        /* CSS: डिजाइन के लिए */
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 20px; }
+        h1 { text-align: center; color: #333; }
+        
+        /* Product Grid */
+        .container { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+        .product-card { background: white; padding: 15px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); width: 200px; text-align: center; }
+        .product-card img { width: 100%; height: 150px; object-fit: cover; border-radius: 5px; }
+        .add-btn { background: #28a745; color: white; border: none; padding: 8px 15px; cursor: pointer; border-radius: 5px; margin-top: 10px; }
+        .add-btn:hover { background: #218838; }
+
+        /* Cart Section */
+        .cart-section { margin-top: 40px; background: #fff; padding: 20px; border-radius: 10px; max-width: 500px; margin-left: auto; margin-right: auto; }
+        .cart-item { display: flex; justify-content: space-between; border-bottom: 1px solid #eee; padding: 10px 0; }
+        .remove-btn { background: #dc3545; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px; }
+        .total { font-weight: bold; font-size: 1.2em; margin-top: 15px; display: block; text-align: right; }
+        .checkout-btn { width: 100%; background: #007bff; color: white; border: none; padding: 12px; margin-top: 10px; cursor: pointer; border-radius: 5px; }
+    </style>
+</head>
+<body>
+
+    <h1>🛒 my cart Store</h1>
+
+    <div class="container" id="product-list">
+        </div>
+
+    <div class="cart-section">
+        <h2>(Items:<span id="count">0</span> )</h2>
+        <div id="cart-items">
+            <p style="color: gray;"></p>
+        </div>
+        <span class="total">Total: ₹<span id="total-price">0</span></span>
+        <button class="checkout-btn" onclick="checkout()">place order (Checkout)</button>
+    </div>
+
+    <script>
+      
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+const container = document.getElementById("cart-items");
+
+if(cart.length === 0){
+  container.innerHTML = "<p>Your cart is empty.</p>";
+} else {
+  cart.forEach(item => {
+    container.innerHTML += `
+      <div class="cart-item">
+        <h3>${item.name}</h3>
+        <p>Unit Price: ₹${item.price}</p>
+        <p>Quantity: ${item.quantity}</p>
+        <p>Total: ₹${item.totalPrice}</p>
+      </div>
+      <hr>
+    `;
+  });
+  const grandTotal = cart.reduce((sum,item) => sum + item.totalPrice, 0);
+  document.getElementById("total-price").innerText =  + grandTotal;
+  /*Container.innerHTML += `<h2>Grand Total: ₹${grandTotal}</h2>`;*/
+}
+function removeItem(index) {
+    cart.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    location.reload();
+}
+ function checkout() {
+            if(cart.length === 0) {
+                alert("please select cart item ");
+            } else {
+                alert("Thank you 😊for shopping us... ");
+                cart = [];
+                updateCartUI();
+            }
+        }
+    </script>
+
+</body>
+</html>

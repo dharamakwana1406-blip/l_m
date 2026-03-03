@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Top rating discount</title>
+   <link href="Accessories.css" rel="stylesheet ">
+  <style>
+    .discount_offer{
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color:white;
+      font-family:serif;
+      padding: 60px 20px;
+      border-radius:0 0 10px 10px;
+    }
+    .discount_offer h1,p{
+      display:flex;
+      justify-content:center;
+      align-items: center;
+      text-align: center;
+      padding:10px;
+    }
+    .mobile_discount h1,.laptop_discount h1{
+      text-align: center;
+      margin:10px;
+      font-family:serif;
+    }
+    .mobile_sale{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content: flex-start;
+      gap:20px;
+     padding:40px;
+    }
+    .sale{
+      width:100%;
+      max-width:250px;
+      height:200px;
+      border-radius:10px;
+      background-color:white;
+    }
+    .sale h3{
+      text-align: center;
+     margin-bottom: 10px;
+    color: #ff6b6b;
+    }
+    .sale p{
+      display: inline-block;
+      margin-left: 10px;
+    }
+    #dis{
+      display:flex;
+      color:red;
+      align-items: center;
+    }
+    .combo {
+    background: linear-gradient(135deg, #ff6b6b, #ff9f43);
+    color: white;
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+    padding: 40px 20px;
+}
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #ff6b6b;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+/* --- Media Queries for Responsiveness --- */
+
+
+/* For Mobile Devices (under 600px) */
+@media (max-width: 768px) {
+
+    .discount_offer {
+        padding: 40px 10px;
+    }
+
+    .discount_offer h1 {
+        font-size: 1.5rem;
+    }
+
+    .mobile_sale {
+        padding: 20px 10px;
+        gap: 15px;
+    }
+
+    .sale {
+        max-width: 100%; /* One card per row on small phones */
+        height: auto;    /* Allow height to grow with text */
+        padding-bottom: 15px;
+    }
+
+    .combo h2 {
+        font-size: 1.4rem;
+    }
+
+    .footer-section {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}
+  </style>
+</head>
+<body>
+   <header>
+  <div class="logo">Techify</div>
+  <nav>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="product.html">product</a></li>
+      <li><a href="offer.html">deals</a></li>
+      <li><a href="contact_us.html">Contact</a></li>
+    </ul>
+    </nav>
+   <div class="actions">
+<a href="cart1.html">🛒</a><span id="cartcount">0</span>
+    </div>
+</header>
+<div class="discount_offer">
+   <h1>Latest Discount & Offer</h1>
+   <p>Upgrade Your Tech at Unbeatable Prices | Free Shipping Above ₹999</p>
+</div>
+<hr>
+<div class="mobile_discount">
+  <h1> 📱mobile Accessories </h1>
+  <div class="mobile_sale">
+    <div class="sale">
+     <h3>Fast Charging Adapters</h3>
+     <p>Adapters High-speed chargers compatible with Android & iPhone.</p>
+     <p id="dis">Up to 40% OFF</p>
+    </div>
+        <div class="sale">
+     <h3>Power Banks</h3>
+     <p>10,000–20,000mAh portable charging solutions..</p>
+     <p id="dis">Starting ₹799</p>
+    </div>
+            <div class="sale">
+     <h3>Wireless Earbuds</h3>
+     <p>Crystal clear sound with long battery life.</p>
+     <p id="dis">Flat 30% OFF</p>
+    </div>
+  </div>
+</div>
+<div class="laptop_discount">
+  <h1>💻 laptops Accessories</h1>
+  <div class="mobile_sale">
+    <div class="sale">
+     <h3>Wireless Keyboard & Mouse</h3>
+     <p>Ergonomic design for work & gaming.</p>
+     <p id="dis">Up to 40% OFF</p>
+    </div>
+        <div class="sale">
+     <h3>Laptop Backpacks</h3>
+     <p>Premium quality with extra protection.</p>
+     <p id="dis">Starting ₹999</p>
+    </div>
+            <div class="sale">
+     <h3>Gaming Mouse</h3>
+     <p>High precision sensor with RGB lighting..</p>
+     <p id="dis">Flat 25% OFF</p>
+    </div>
+  </div>
+</div>
+<section class="section">
+    <div class="combo">
+        <h2>🎁 Special Combo Offer</h2>
+        <p>Work From Home Kit: Laptop Stand + Wireless Mouse + Keyboard</p>
+        <h3>Save ₹1,500 Today!</h3>
+        <a href="#" class="btn" style="background:white;color:#ff6b6b;">Grab Deal</a>
+    </div>
+</section>
+<footer>
+  <h2>Explore More</h2>
+    <hr>
+
+    <div class="footer-container">
+
+      <!-- Navigation -->
+      <div class="footer-section footer-nav">
+        <ul>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">Company</a></li>
+          <li><a href="#">Support</a></li>
+          <li><a href="#">Privacy</a></li>
+        </ul>
+      </div>
+      </div>
+<hr>
+      <!-- About -->
+      <div class="footer-section footer-about">
+        <h3>Techify</h3>
+        <p>🔒 <span aria-label="Secure checkout">Secure checkout</span></p>
+        <p>🎧 <span aria-label="24/7 support system">24/7 support system</span></p>
+      </div>
+  <p>© 2026 Techify. All Rights Reserved.</p>
+</footer>
+<script>
+  function toggleMenu() {
+  document.querySelector('.nav-links').classList.toggle('show');
+}
+</script>
+</body>
+
+</html>
